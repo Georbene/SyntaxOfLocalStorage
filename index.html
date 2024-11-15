@@ -1,0 +1,93 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // var lateComer = "Big Sam"
+        // localStorage.setItem('student', lateComer)
+        // localStorage.setItem('goodFood', 'Pounded yam and efo riro')
+        
+        // var stubbornStudent = {
+        //     name: 'George',
+        //     age: 25,
+        //     deparment: 'Computer Science',
+        //     level: 300
+        // }
+        // var key = 'studs'
+
+        // localStorage.setItem(key, JSON.stringify(stubbornStudent))
+
+        var allStudents = [
+            {
+                name: 'George',
+                age: 25,
+                deparment: 'Computer Science',
+                level: 300
+            }, 
+            {
+                name: 'Inioluwa',
+                age: 25,
+                deparment: 'Computer Science',
+                level: 100
+            }
+        ]
+        for (var index = 0; index < allStudents.length; index++){
+            const element = allStudents[index];
+            show.innerHTML += `<p>${element.name}</p>
+                                <p>${element.age}</p>
+                                <p>${element.deparment}</p>
+                                <p>${element.level}</p>`
+        } 
+        localStorage.setItem('allStudents', JSON.stringify(allStudents))
+    </script>
+</body> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Students</title>
+</head>
+<body>
+    <!-- Container to show student data -->
+    <div id="show"></div> 
+    <div><a href="display.html"> display here</a></div>
+    <script>
+        var allStudents = [
+            {
+                name: 'George',
+                age: 25,
+                department: 'Computer Science',
+                level: 300
+            },
+            {
+                name: 'Inioluwa',
+                age: 25,
+                department: 'Computer Science',
+                level: 100
+            }
+        ];
+
+        // Show student data in HTML
+        var show = document.getElementById('show');
+        for (var index = 0; index < allStudents.length; index++) {
+            const element = allStudents[index];
+            show.innerHTML += `<p>Name: ${element.name}</p>
+                               <p>Age: ${element.age}</p>
+                               <p>Department: ${element.department}</p>
+                               <p>Level: ${element.level}</p><hr>`;
+        }
+
+        // Store the student data in localStorage
+        localStorage.setItem('allStudents', JSON.stringify(allStudents));
+    </script>
+</body>
+</html>
